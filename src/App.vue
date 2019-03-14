@@ -1,29 +1,128 @@
+<style>
+.layout {
+  border: 1px solid #d7dde4;
+  background: #f5f7f9;
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.layout-logo {
+  width: 100px;
+  height: 30px;
+  background: #5b6270;
+  border-radius: 3px;
+  float: left;
+  position: relative;
+  top: 15px;
+  left: 20px;
+}
+.layout-nav {
+  width: 600px;
+  margin: 0 auto;
+  margin-right: 20px;
+
+}
+.layout-footer-center {
+  text-align: center;
+}
+</style>
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+  <div class="layout">
+    <Layout>
+      <Header>
+        <Menu mode="horizontal" theme="dark" active-name="1">
+          <div class="layout-logo"></div>
+          <div class="layout-nav">
+            <router-link to="/">
+            <MenuItem name="1">
+              <Icon type="ios-navigate"></Icon>主页
+            </MenuItem>
+            </router-link>
+
+            <router-link to="/about">
+            <MenuItem name="2">
+              <Icon type="ios-keypad"></Icon>项目简介
+            </MenuItem>
+            </router-link>
+
+            <router-link to="/about">
+            <MenuItem name="3">
+              <Icon type="ios-analytics"></Icon>通知公告
+            </MenuItem>
+            </router-link>
+
+            <router-link to="/about">
+            <MenuItem name="4">
+              <Icon type="ios-paper"></Icon>新闻报道
+            </MenuItem>
+            </router-link>
+
+            <router-link to="/about">
+            <MenuItem name="5">
+              <Icon type="ios-paper"></Icon>联系我们
+            </MenuItem>
+            </router-link>
+          </div>
+          
+        </Menu>
+        
+      </Header>
+      <Layout :style="{padding: '0 50px'}">
+        <!-- <Breadcrumb :style="{margin: '16px 0'}">
+          <BreadcrumbItem>Home</BreadcrumbItem>
+          <BreadcrumbItem>Components</BreadcrumbItem>
+          <BreadcrumbItem>Layout</BreadcrumbItem>
+        </Breadcrumb> -->
+        <Content :style="{padding: '24px 0', minHeight: '280px', background: '#fff'}">
+          <router-view />
+          <!-- <Layout>
+            <Sider hide-trigger :style="{background: '#fff'}">
+              <Menu active-name="1-2" theme="light" width="auto" :open-names="['1']">
+                <Submenu name="1">
+                  <template slot="title">
+                    <Icon type="ios-navigate"></Icon>Item 1
+                  </template>
+                  <MenuItem name="1-1">Option 1</MenuItem>
+                  <MenuItem name="1-2">Option 2</MenuItem>
+                  <MenuItem name="1-3">Option 3</MenuItem>
+                </Submenu>
+                <Submenu name="2">
+                  <template slot="title">
+                    <Icon type="ios-keypad"></Icon>Item 2
+                  </template>
+                  <MenuItem name="2-1">Option 1</MenuItem>
+                  <MenuItem name="2-2">Option 2</MenuItem>
+                </Submenu>
+                <Submenu name="3">
+                  <template slot="title">
+                    <Icon type="ios-analytics"></Icon>Item 3
+                  </template>
+                  <MenuItem name="3-1">Option 1</MenuItem>
+                  <MenuItem name="3-2">Option 2</MenuItem>
+                </Submenu>
+              </Menu>
+            </Sider>
+            <Content :style="{padding: '24px', minHeight: '280px', background: '#fff'}">Content</Content>
+          </Layout> -->
+        </Content>
+      </Layout>
+      <Footer class="layout-footer-center">2019 &copy; 青年红色筑梦</Footer>
+    </Layout>
   </div>
 </template>
 
-<style lang="less">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
+<script>
+// @ is an alias to /src
+
+export default {
+  name: 'home',
+  data () {
+    return {
+      theme1: "dark"
     }
+  },
+  components: {
   }
 }
-</style>
+</script>
+
