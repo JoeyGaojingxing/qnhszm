@@ -24,10 +24,14 @@
 .layout-footer-center {
   text-align: center;
 }
+.content{
+  display: flex;
+  justify-content: center;
+}
 </style>
 <template>
-  <div>
-    <Content/>
+  <div class="content">
+    <Content />
   </div>
 </template>
 

@@ -1,17 +1,11 @@
 <style lang="less" scoped>
 .home {
-  background-color: rgb(60, 110, 110);
+  background-color: rgba(205, 218, 255, 0.5);
   padding: 20px 20px;
 }
 .carousel {
   max-width: 1000px;
-  margin: auto;
 }
-.inner-carousel {
-  height: 360px;
-  background-color: aqua;
-}
-
 .content {
   display: flex;
   flex-wrap: wrap;
@@ -20,8 +14,8 @@
 
   .card {
     margin: 10px 20px;
-    min-width: 390px;
-    max-width: 400px;
+    min-width: 350px;
+    max-width: 350px;
     min-height: 200px;
   }
 }
@@ -41,17 +35,21 @@
       class="carousel"
     >
       <CarouselItem>
-        <div class="inner-carousel">1</div>
+        <div class="inner-carousel">
+          <img :src="Carouse1" alt="Carouse1">
+        </div>
       </CarouselItem>
       <CarouselItem>
-        <div class="inner-carousel">2</div>
+        <div class="inner-carousel">
+          <img :src="Carouse2" alt="Carouse2">
+        </div>
       </CarouselItem>
-      <CarouselItem>
+      <!-- <CarouselItem>
         <div class="inner-carousel">3</div>
       </CarouselItem>
       <CarouselItem>
         <div class="inner-carousel">4</div>
-      </CarouselItem>
+      </CarouselItem> -->
     </Carousel>
     <div class="content">
       <Card :bordered="false" class="card">
@@ -96,16 +94,20 @@
 
 <script>
 // @ is an alias to /src
+import Carouse2 from "@/static/images/carouse1.jpg";
+import Carouse1 from "@/static/images/carouse2.jpg";
 
 export default {
   name: "home",
   data() {
     return {
       value3: 0,
+      Carouse1,
+      Carouse2,
       setting: {
         autoplay: true,
-        autoplaySpeed: 2000,
-        dots: "inside",
+        autoplaySpeed: 3000,
+        dots: "outside",
         radiusDot: false,
         trigger: "hover",
         arrow: "hover"

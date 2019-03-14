@@ -1,10 +1,21 @@
-<style>
+<style lang="less">
 .layout {
   border: 1px solid #d7dde4;
   background: #f5f7f9;
   position: relative;
   border-radius: 4px;
   overflow: hidden;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  img {
+    flex: 1;
+    width: 100%;
+  }
+}
+.ivu-layout-header,
+.nav-bar {
+  background-color: rgb(241, 238, 233) !important;
 }
 .layout-logo {
   width: 100px;
@@ -15,6 +26,7 @@
   position: relative;
   top: 15px;
   left: 20px;
+  color: white;
 }
 .layout-nav {
   width: 600px;
@@ -27,40 +39,43 @@
 </style>
 <template>
   <div class="layout">
+    <img :src="imgHead" alt="header image here">
     <Layout>
+      <!-- Header image here -->
       <Header>
-        <Menu mode="horizontal" theme="dark" active-name="1">
-          <div class="layout-logo"></div>
+        <Menu mode="horizontal" :theme="theme1" active-name="1" class="nav-bar">
+          <div class="layout-logo">Logo</div>
           <div class="layout-nav">
-            <router-link to="/">
-              <MenuItem name="1">
-                <Icon type="ios-navigate"></Icon>主页
-              </MenuItem>
-            </router-link>
+            <MenuItem name="1" to="/">
+              <Icon type="ios-navigate"></Icon>主页
+            </MenuItem>
 
-            <router-link to="/about">
-              <MenuItem name="2">
+            <Submenu name="2">
+              <template slot="title">
                 <Icon type="ios-keypad"></Icon>项目简介
-              </MenuItem>
-            </router-link>
+              </template>
+              <MenuGroup title="使用">
+                <MenuItem name="3-1" to="/about">新增和启动</MenuItem>
+                <MenuItem name="3-2" to="/about">活跃分析</MenuItem>
+                <MenuItem name="3-3" to="/about">时段分析</MenuItem>
+              </MenuGroup>
+              <MenuGroup title="留存">
+                <MenuItem name="3-4" to="/about">用户留存</MenuItem>
+                <MenuItem name="3-5" to="/about">流失用户</MenuItem>
+              </MenuGroup>
+            </Submenu>
 
-            <router-link to="/about">
-              <MenuItem name="3">
-                <Icon type="ios-analytics"></Icon>通知公告
-              </MenuItem>
-            </router-link>
+            <MenuItem name="3" to="/about">
+              <Icon type="ios-analytics"></Icon>通知公告
+            </MenuItem>
 
-            <router-link to="/about">
-              <MenuItem name="4">
-                <Icon type="ios-paper"></Icon>新闻报道
-              </MenuItem>
-            </router-link>
+            <MenuItem name="4" to="/about">
+              <Icon type="ios-paper"></Icon>新闻报道
+            </MenuItem>
 
-            <router-link to="/about">
-              <MenuItem name="5">
-                <Icon type="ios-paper"></Icon>联系我们
-              </MenuItem>
-            </router-link>
+            <MenuItem name="5" to="/about">
+              <Icon type="ios-paper"></Icon>登陆
+            </MenuItem>
           </div>
         </Menu>
       </Header>
@@ -70,7 +85,7 @@
           <BreadcrumbItem>Components</BreadcrumbItem>
           <BreadcrumbItem>Layout</BreadcrumbItem>
         </Breadcrumb>-->
-        <Content :style="{padding: '24px 0', minHeight: '750px', background: '#fff'}">
+        <Content :style="{padding: '24px 50px', minHeight: '750px', background: '#fff'}">
           <router-view/>
           <!-- <Layout>
             <Sider hide-trigger :style="{background: '#fff'}">
@@ -110,15 +125,16 @@
 
 <script>
 // @ is an alias to /src
+import imgHead from "@/static/images/pagehead.jpg";
 
 export default {
   name: "home",
   data() {
     return {
-      theme1: "dark"
+      theme1: "light",
+      imgHead
     };
   },
   components: {}
 };
 </script>
-
