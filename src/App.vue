@@ -20,7 +20,6 @@
   width: 600px;
   margin: 0 auto;
   margin-right: 20px;
-
 }
 .layout-footer-center {
   text-align: center;
@@ -34,47 +33,45 @@
           <div class="layout-logo"></div>
           <div class="layout-nav">
             <router-link to="/">
-            <MenuItem name="1">
-              <Icon type="ios-navigate"></Icon>主页
-            </MenuItem>
+              <MenuItem name="1">
+                <Icon type="ios-navigate"></Icon>主页
+              </MenuItem>
             </router-link>
 
             <router-link to="/about">
-            <MenuItem name="2">
-              <Icon type="ios-keypad"></Icon>项目简介
-            </MenuItem>
+              <MenuItem name="2">
+                <Icon type="ios-keypad"></Icon>项目简介
+              </MenuItem>
             </router-link>
 
             <router-link to="/about">
-            <MenuItem name="3">
-              <Icon type="ios-analytics"></Icon>通知公告
-            </MenuItem>
+              <MenuItem name="3">
+                <Icon type="ios-analytics"></Icon>通知公告
+              </MenuItem>
             </router-link>
 
             <router-link to="/about">
-            <MenuItem name="4">
-              <Icon type="ios-paper"></Icon>新闻报道
-            </MenuItem>
+              <MenuItem name="4">
+                <Icon type="ios-paper"></Icon>新闻报道
+              </MenuItem>
             </router-link>
 
             <router-link to="/about">
-            <MenuItem name="5">
-              <Icon type="ios-paper"></Icon>联系我们
-            </MenuItem>
+              <MenuItem name="5">
+                <Icon type="ios-paper"></Icon>联系我们
+              </MenuItem>
             </router-link>
           </div>
-          
         </Menu>
-        
       </Header>
       <Layout :style="{padding: '0 50px'}">
         <!-- <Breadcrumb :style="{margin: '16px 0'}">
           <BreadcrumbItem>Home</BreadcrumbItem>
           <BreadcrumbItem>Components</BreadcrumbItem>
           <BreadcrumbItem>Layout</BreadcrumbItem>
-        </Breadcrumb> -->
-        <Content :style="{padding: '24px 0', minHeight: '280px', background: '#fff'}">
-          <router-view />
+        </Breadcrumb>-->
+        <Content :style="{padding: '24px 0', minHeight: '750px', background: '#fff'}">
+          <router-view/>
           <!-- <Layout>
             <Sider hide-trigger :style="{background: '#fff'}">
               <Menu active-name="1-2" theme="light" width="auto" :open-names="['1']">
@@ -103,7 +100,7 @@
               </Menu>
             </Sider>
             <Content :style="{padding: '24px', minHeight: '280px', background: '#fff'}">Content</Content>
-          </Layout> -->
+          </Layout>-->
         </Content>
       </Layout>
       <Footer class="layout-footer-center">2019 &copy; 青年红色筑梦</Footer>
@@ -115,14 +112,13 @@
 // @ is an alias to /src
 
 export default {
-  name: 'home',
-  data () {
+  name: "home",
+  data() {
     return {
       theme1: "dark"
-    }
+    };
   },
-  components: {
-  }
-}
+  components: {}
+};
 </script>
 

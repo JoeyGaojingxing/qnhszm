@@ -5,7 +5,7 @@
 }
 .carousel {
   max-width: 1000px;
-  margin: 10px 50px;
+  margin: auto;
 }
 .inner-carousel {
   height: 360px;
@@ -16,7 +16,7 @@
   display: flex;
   flex-wrap: wrap;
   padding: 10px 50px;
-    justify-content:center;
+  justify-content: center;
 
   .card {
     margin: 10px 20px;
