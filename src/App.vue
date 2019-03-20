@@ -9,7 +9,6 @@
   min-height: 100vh;
   flex-direction: column;
   img {
-    flex: 1;
     width: 100%;
   }
 }
@@ -73,7 +72,7 @@
               <Icon type="ios-paper"></Icon>新闻报道
             </MenuItem>
 
-            <MenuItem name="5" to="/about">
+            <MenuItem name="5" to="/login">
               <Icon type="ios-paper"></Icon>登陆
             </MenuItem>
           </div>
@@ -85,7 +84,7 @@
           <BreadcrumbItem>Components</BreadcrumbItem>
           <BreadcrumbItem>Layout</BreadcrumbItem>
         </Breadcrumb>-->
-        <Content :style="{padding: '24px 50px', minHeight: '750px', background: '#fff'}">
+        <Content :style="{padding: '24px 50px', flex: 1, background: '#fff'}">
           <router-view/>
           <!-- <Layout>
             <Sider hide-trigger :style="{background: '#fff'}">
