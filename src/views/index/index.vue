@@ -67,26 +67,24 @@
 <script>
 import carousel1 from '@/assets/img/carousel1.jpg'
 import carousel2 from '@/assets/img/carousel2.jpg'
+import article from '@/lin/models/article'
 
 export default {
   components: {},
   data() {
     return {
       carousels: [carousel1, carousel2],
+      cards: [],
     }
   },
   computed: {},
   watch: {},
   async created() {
+    this.cards = await article.getArticles()
   },
   async mounted() {
   },
   methods: {
-    // async getLists() {
-    //   const res = await index.getList()
-    //   // eslint-disable-next-line no-console
-    //   console.log(res)
-    // },
     ls(count) {
       return Array(++count)
         .join('0')
