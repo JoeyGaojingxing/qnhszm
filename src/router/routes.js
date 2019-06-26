@@ -19,12 +19,17 @@ const routes = [
   {
     path: '/',
     name: 'index',
-    component: () => import('@/views/index/index')
+    component: () => import('@/views/index/index'),
   },
   {
     path: '/article',
     name: 'article',
-    component: () => import('@/views/index/article')
+    component: () => import('@/views/index/article'),
+  },
+  {
+    path: '/notice',
+    name: 'notice',
+    component: () => import('@/views/index/notice'),
   },
   {
     redirect: '/404',

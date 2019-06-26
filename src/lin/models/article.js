@@ -21,6 +21,12 @@ class Article {
     return res
   }
 
+  async getArticles(page) {
+    console.log('page = ', page)
+    const res = await get('v1/article/', { page })
+    return res
+  }
+
   async editBook(id, info) {
     const res = await put(`v1/book/${id}`, info)
     return res
@@ -28,11 +34,6 @@ class Article {
 
   async delectBook(id) {
     const res = await _delete(`v1/book/${id}`)
-    return res
-  }
-
-  async getArticles() {
-    const res = await get('v1/article/')
     return res
   }
 }
