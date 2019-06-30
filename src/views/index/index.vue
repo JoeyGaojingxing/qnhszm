@@ -79,6 +79,7 @@ a:hover {
     height: 100%;
     font-size: 20px;
     font-weight: bold;
+    margin: 20px 0;
 
     .line {
       height: 5px;
@@ -88,12 +89,20 @@ a:hover {
     }
   }
 
+  .news {
+      display: flex;
+      
+      .news-card {
+          margin: 10px;
+      }
+  }
+
   .carousel {
     max-width: 1000px;
   }
 
   .content {
-    padding: 3rem;
+    padding: 0 3rem;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
@@ -150,6 +159,24 @@ a:hover {
         <!-- cut-off -->
         <div class="cutoff">
           最新动态
+          <hr class="line" />
+        </div>        
+        
+        <div class="news">
+            <el-card
+            :body-style="{ padding: '10px' }"
+            :key='card.id'
+            class='news-card'
+            v-for="card in news"
+            @click="onClickNews"
+            >
+            {{ card.news }}
+            </el-card>
+        </div>
+        
+        <!-- cut-off -->
+        <div class="cutoff">
+          项目风采
           <hr class="line" />
         </div>
 
@@ -223,7 +250,8 @@ export default {
       activeIndex: 0,
       carousels: [carousel1, carousel2],
       cards: [],
-      logo1: logo
+      logo1: logo,
+      news:[]
     };
   },
   computed: {},
@@ -231,6 +259,8 @@ export default {
   async created() {
     const now = this;
     now.cards = await article.getArticles();
+    now.news = [{id:1, news:"第五届中国互联网+大学生创新创业大赛评审规则正式发布"},
+    {id:2, news:"关于报名参加第五届中国互联网+大学生创新创业大赛的通知"}]
   },
   async mounted() {},
   methods: {

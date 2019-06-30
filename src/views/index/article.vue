@@ -21,6 +21,10 @@
             </el-menu>
         </div>
 
+        <div class="content">
+            {{this.article.title}} <br><br><br>
+            {{ this.article.intro }}
+        </div>
 
         <!-- Footer -->
         <div class="footer">
@@ -58,12 +62,14 @@ export default {
   data() {
     return {
       logo1: logo,
-      article: 2,
+      articleID: 0,
+      article: {}
     }
   },
   async created() {
     const articleID = this.$route.query.id
     this.article = await article.getArticle(articleID)
+    console.log(this.article)
   },
 }
 </script>
@@ -132,20 +138,7 @@ export default {
         }
 
         .content {
-            padding: 3rem;
-            display: flex;
-            flex-flow: row wrap;
-            justify-content: space-around;
-
-            .box-card {
-                width: 300px;
-                margin: 25px 10px;
-
-                .image {
-                    width: 100%;
-                    display: block;
-                }
-            }
+            font-size: 20px;
         }
     }
 
