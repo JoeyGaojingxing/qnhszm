@@ -15,10 +15,8 @@
             >
                 <el-menu-item index="/">首页</el-menu-item>
                 <el-menu-item index="notice">通知</el-menu-item>
-                <el-menu-item index="" style="padding: 20px">
-                    <a href="https://cy.ncss.cn/redactivity/index">
-                        大赛官网
-                    </a>
+                <el-menu-item index="news">
+                        新闻
                 </el-menu-item>
             </el-menu>
         </div>

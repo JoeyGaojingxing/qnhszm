@@ -30,6 +30,11 @@ const routes = [
     path: '/notice',
     name: 'notice',
     component: () => import('@/views/index/notice'),
+  },  
+  {
+    path: '/news',
+    name: 'news',
+    component: () => import('@/views/index/news'),
   },
   {
     redirect: '/404',
